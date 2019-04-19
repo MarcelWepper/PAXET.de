@@ -37,7 +37,7 @@ class NavHome extends React.Component {
       <div>
         <MDBNavbar className="header" expand="md" fixed="top" scrolling transparent dark>
         <MDBNavbarBrand href="/#">
-          <img src={Brand} height="48px" width="48px" alt="" /><strong>Paxet</strong>
+          <img src={Brand} height="48px" width="48px" alt="" /><strong>  PAXET</strong>
         </MDBNavbarBrand>
         {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
         <MDBCollapse isOpen={this.state.collapse} navbar>
@@ -50,6 +50,9 @@ class NavHome extends React.Component {
             </MDBNavItem>
             <MDBNavItem>
               <AnchorLink className="NavbarItem" offset='60' href='#team'>Team</AnchorLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <AnchorLink className="NavbarItem" offset='60' href='#lösung'>Lösung</AnchorLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to="/location" >Paket-Hubs</MDBNavLink>

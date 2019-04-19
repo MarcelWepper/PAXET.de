@@ -11,6 +11,10 @@ import './Home.css';
 import Marcel from'./Pics/marcel.png';
 import Hero from'./Pics/hero.jpg';
 import Phone from'./Pics/phone.jpg';
+import Logo from'./Pics/brand.png';
+import Oli from'./Pics/Oli.jpeg';
+import Thomas from'./Pics/Thomas.jpeg';
+import Courier from'./Pics/courier.jpg';
 
 class Home extends React.Component {
 
@@ -31,13 +35,13 @@ class Home extends React.Component {
               {/* 	Hier die trasnparente Box mit allem	*/}
               <div className= "HeroText">
                 <Row>
-                  <Col> <img src={Marcel} width="25%" height="100%" alt="ProfilePicture"rounded responsive /></Col>
+                  <Col><h1>Simplify your daily life with PAXET!</h1></Col>
                 </Row>
                 <Row>
-                  <Col><h1> Trete der Paxet-Community bei!</h1></Col>
+                  <Col><h2>Trete der Paxet-Community bei!</h2></Col>
                 </Row>
                 <Row>
-                  <Col><h3> Seite im Aufbau...</h3></Col>
+                  <Col><h3>Seite im Aufbau...</h3></Col>
                 </Row>
               </div>
             </Container>
@@ -45,47 +49,57 @@ class Home extends React.Component {
         </section>
 
         <section id='idee'>
-          <MDBJumbotron fluid color="white" no-gutters>
+          <MDBJumbotron fluid color="white" no-gutters style={{"padding-top": "0px"}}>
             <MDBContainer className="Jumbotron" fluid no-gutters>
               <MDBRow no-gutters>
                 <MDBCol className="Platzhalter"size="12"/>
               </MDBRow>
               <MDBRow no-gutters>
                 <MDBCol size="12">
-                  <h1> Unsere Idee: </h1>
+                  <h1> PAXET: </h1>
                 </MDBCol>
               </MDBRow>
               <MDBRow no-gutters>
                 <MDBCol lg="6">
-                  <img src={Hero} className="img-fluid" alt="" />
+                  <img src={Courier} className="img-fluid" alt="" />
                 </MDBCol>
                 <MDBCol lg="6" className="h1" style={{"margin-bottom": "0px"}}>
                   <div className="h1">
-                    <h1 style={{"margin-bottom": "0px"}}>Lorem Ipsum...</h1>
-                    <h2 style={{"fontSize":"0.6em"}}>Lorem Ipsum...</h2>
-                    <h2 style={{"fontSize":"0.6em"}}>Lorem Ipsum...</h2>
+                    <h1 style={{"margin-bottom": "0px"}}>Unsere Vision:</h1>
+                    <h2 style={{"fontSize":"0.6em"}}>Unsere Vision ist es, den Menschen in Zukunft eine problemlose und sichere Zustellung ihrer Paketbestellungen zu garantieren und zugleich die überforderten Paketzusteller zu entlasten.</h2>
+                    <h2 style={{"fontSize":"0.6em"}}> </h2>
                   </div>
                 </MDBCol>
               </MDBRow>
               <MDBRow no-gutters>
                 <MDBCol lg="6" className="h1" style={{"margin-bottom": "0px"}}>
                   <div className="h1">
-                    <h1>Lorem Ipsum...</h1>
-                    <h2 style={{"fontSize":"0.6em"}}>Lorem Ipsum...</h2>
-                    <h2 style={{"fontSize":"0.6em"}}>Lorem Ipsum...</h2>
+                    <h1>Unser Ziel:</h1>
+                    <h2 style={{"fontSize":"0.6em"}}>Das Ziel von PAXET ist eine zukunftsfähige und reibungslose Paketzustellung, die den Alltag für Empfänger und Paketdienstleister durch den Einbezug privater Haushalte in den Zustellungsprozess vereinfacht und effizienter gestaltet.</h2>
                     </div>
                   </MDBCol>
                   <MDBCol no-gutters lg="6">
                     <img src={Hero} className="img-fluid" alt="" />
                   </MDBCol>
                 </MDBRow>
+                <MDBRow no-gutters>
+                  <MDBCol no-gutters lg="6">
+                    <img src={Hero} className="img-fluid" alt="" />
+                  </MDBCol>
+                  <MDBCol lg="6" className="h1" style={{"margin-bottom": "0px"}}>
+                    <div className="h1">
+                      <h1>Unsere Aufgabe:</h1>
+                      <h2 style={{"fontSize":"0.6em"}}>Wir sehen es als unsere Aufgabe an, die wachsende Anzahl an Zustellproblemen zu minimieren, die überforderten Paketboten zu entlasten sowie das durch die Lieferwägen entstehende Verkehrsaufkommen und somit die Umweltbelastung zu reduzieren.</h2>
+                      </div>
+                    </MDBCol>
+                  </MDBRow>
               </MDBContainer>
             </MDBJumbotron>
           </section>
 
           <section id='team'>
-            <MDBJumbotron fluid>
-              <MDBContainer color="elegant-color-dark">
+            <MDBJumbotron fluid style={{"background-color": "#7A1429"}}>
+              <MDBContainer>
                 <Animation type="fadeIn" duration="1s" delay="0.5s" reveal>
                   <MDBRow className="Sup2">
                     <MDBCol size="12">
@@ -95,12 +109,12 @@ class Home extends React.Component {
                   <MDBRow>
                     <MDBCol size="lg" md= "12" sm ="12" className="Padding">
                     <MDBCard>
-                      <img src={Marcel} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
-                      <MDBCardBody className="elegant-color white-text rounded-bottom">
+                      <img src={Oli} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
+                      <MDBCardBody class="elegant-color dark-text rounded-bottom">
                         <MDBCardTitle>Oli <br/> Göbbel</MDBCardTitle>
-                        <hr className="hr-light" />
-                        <MDBCardText className="white-text">
-                          Finanzplanung, Unternehmensorganisation
+                        <hr class="hr-dark" />
+                        <MDBCardText class="dark-text">
+                          Vertrieb, Marketing, Organisation
                         </MDBCardText>
                       </MDBCardBody>
                     </MDBCard>
@@ -108,12 +122,12 @@ class Home extends React.Component {
                 </MDBCol>
                 <MDBCol size="lg" md= "12" sm ="12" className="Padding">
                   <MDBCard>
-                    <img src={Marcel} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
-                    <MDBCardBody className="elegant-color white-text rounded-bottom">
+                    <img src={Thomas} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
+                    <MDBCardBody class="elegant-color dark-text rounded-bottom">
                       <MDBCardTitle> Thomas <br/> Göbbel</MDBCardTitle>
-                      <hr className="hr-light" />
-                      <MDBCardText className="white-text">
-                        Finanzplanung, Unternehmensorganisation
+                      <hr class="hr-dark" />
+                      <MDBCardText className="dark-text">
+                        Strategie-, Finanzplanung
                       </MDBCardText>
                     </MDBCardBody>
                   </MDBCard>
@@ -123,11 +137,11 @@ class Home extends React.Component {
                   <MDBCol size="lg" md= "12" sm ="12" className="Padding">
                     <MDBCard>
                       <img src={Marcel} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
-                      <MDBCardBody className="elegant-color white-text rounded-bottom">
+                      <MDBCardBody class="elegant-color dark-text rounded-bottom">
                         <MDBCardTitle>Marcel <br/>Wepper</MDBCardTitle>
-                        <hr className="hr-light" />
-                        <MDBCardText className="white-text">
-                          Full-Stack-Developer, Administrator
+                        <hr class="hr-dark" />
+                        <MDBCardText className="dark-text">
+                          Full-Stack-Developer, IT-Administrator
                         </MDBCardText>
                       </MDBCardBody>
                     </MDBCard>
@@ -140,6 +154,32 @@ class Home extends React.Component {
 
               </MDBJumbotron>
               </section>
+
+              <section id='lösung'>
+                <MDBJumbotron fluid color="white" style={{"padding-top": "0px"}}>
+                  <MDBContainer fluid className="Jumbotron2" >
+                    <MDBRow>
+                      <MDBCol className="Platzhalter"size="12"/>
+                    </MDBRow>
+                    <MDBRow>
+                      <MDBCol size="12">
+                        <h1> Unsere Lösung: </h1>
+                      </MDBCol>
+                    </MDBRow>
+                    <MDBRow >
+                      <MDBCol lg="6">
+                        <img src={Courier} className="img-fluid" alt="" />
+                      </MDBCol>
+                      <MDBCol lg="6" className="h1" style={{"margin-bottom": "0px"}}>
+                        <div className="h1">
+                          <h1 style={{"margin-bottom": "0px"}}>Paket-Hubs:</h1>
+                          <h2 style={{"fontSize":"0.6em"}}>Lorem Ipsum...</h2>
+                        </div>
+                      </MDBCol>
+                    </MDBRow>
+                    </MDBContainer>
+                  </MDBJumbotron>
+                </section>
 
 				{/*	Hier wird der Cookie und deren Parameter bestimmt	*/}
 				<CookieConsent
