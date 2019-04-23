@@ -16,7 +16,7 @@ render((
       <App />
     </BrowserRouter>
 ), document.getElementById('root'));
-register('/service-worker.js', {
+/*/register('/service-worker.js', {
   registrationOptions: { scope: './' },
   ready (registration) {
     console.log('Service worker is active.')
@@ -40,3 +40,4 @@ register('/service-worker.js', {
     console.error('Error during service worker registration:', error)
   }
 })
+*/
