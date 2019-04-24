@@ -37,7 +37,7 @@ class NavHome extends React.Component {
       <div>
         <MDBNavbar className="header" expand="md" fixed="top" scrolling transparent dark>
         <MDBNavbarBrand href="/#">
-          <img src={Brand} height="48px" width="48px" alt="" /><strong>  PAXET</strong>
+          <strong>PAXET - simplify your daily life!</strong>
         </MDBNavbarBrand>
         {!this.state.isWideEnough && <MDBNavbarToggler onClick={this.onClick} />}
         <MDBCollapse isOpen={this.state.collapse} navbar>

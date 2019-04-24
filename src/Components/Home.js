@@ -35,10 +35,10 @@ class Home extends React.Component {
               {/* 	Hier die trasnparente Box mit allem	*/}
               <div className= "HeroText">
                 <Row>
-                  <Col><h1>Simplify your daily life with PAXET!</h1></Col>
+                  <Col><h1>PAXET</h1></Col>
                 </Row>
                 <Row>
-                  <Col><h2>Trete der Paxet-Community bei!</h2></Col>
+                  <Col><h2>Die Paketzustellung von morgen</h2></Col>
                 </Row>
                 <Row>
                   <Col><h3>Seite im Aufbau...</h3></Col>
@@ -50,20 +50,20 @@ class Home extends React.Component {
 
         <section id='idee'>
           <MDBJumbotron fluid color="white" no-gutters style={{"padding-top": "0px"}}>
-            <MDBContainer className="Jumbotron" fluid no-gutters>
+            <MDBContainer className="Jumbotron align-middle" fluid no-gutters>
               <MDBRow no-gutters>
                 <MDBCol className="Platzhalter"size="12"/>
               </MDBRow>
               <MDBRow no-gutters>
                 <MDBCol size="12">
-                  <h1> PAXET: </h1>
+                  <h1> Trete der PAXET-Community bei </h1>
                 </MDBCol>
               </MDBRow>
               <MDBRow no-gutters>
                 <MDBCol lg="6">
                   <img src={Courier} className="img-fluid" alt="" />
                 </MDBCol>
-                <MDBCol lg="6" className="h1" style={{"margin-bottom": "0px"}}>
+                <MDBCol lg="6" className="h1 text-center" style={{"margin-bottom": "0px"}}>
                   <div className="h1">
                     <h1 style={{"margin-bottom": "0px"}}>Unsere Vision:</h1>
                     <h2 style={{"fontSize":"0.6em"}}>Unsere Vision ist es, den Menschen in Zukunft eine problemlose und sichere Zustellung ihrer Paketbestellungen zu garantieren und zugleich die überforderten Paketzusteller zu entlasten.</h2>
@@ -111,7 +111,7 @@ class Home extends React.Component {
                     <MDBCard>
                       <img src={Oli} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
                       <MDBCardBody class="elegant-color dark-text rounded-bottom">
-                        <MDBCardTitle>Oli <br/> Göbbel</MDBCardTitle>
+                        <MDBCardTitle>Oliver <br/> Göbbel</MDBCardTitle>
                         <hr class="hr-dark" />
                         <MDBCardText class="dark-text">
                           Vertrieb, Marketing, Organisation
