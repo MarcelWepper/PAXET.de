@@ -10,11 +10,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Home.css';
 import Marcel from'./Pics/marcel.png';
 import Hero from'./Pics/hero.jpg';
+import Goal from'./Pics/goal.jpg';
+import Vision from'./Pics/vision.jpg';
+import Task from'./Pics/task.jpg';
 import Phone from'./Pics/phone.jpg';
 import Logo from'./Pics/brand.png';
 import Oli from'./Pics/Oli.jpeg';
 import Thomas from'./Pics/Thomas.jpeg';
 import Courier from'./Pics/courier.jpg';
+import Concept from './Pics/concept.png';
+import ConceptD from './Pics/conceptd.png';
+import ConceptP from './Pics/conceptp.png';
 
 class Home extends React.Component {
 
@@ -50,43 +56,42 @@ class Home extends React.Component {
 
         <section id='idee'>
           <MDBJumbotron fluid color="white" no-gutters style={{"padding-top": "0px"}}>
-            <MDBContainer className="Jumbotron align-middle" fluid no-gutters>
+            <MDBContainer className="Jumbotron" fluid no-gutters>
               <MDBRow no-gutters>
                 <MDBCol className="Platzhalter"size="12"/>
               </MDBRow>
               <MDBRow no-gutters>
                 <MDBCol size="12">
-                  <h1> Trete der PAXET-Community bei </h1>
+                  <h1 style={{"margin-bottom": "2%","margin-top": "2%"}}>  Trete der PAXET-Community bei </h1>
                 </MDBCol>
               </MDBRow>
-              <MDBRow no-gutters>
-                <MDBCol lg="6">
-                  <img src={Courier} className="img-fluid" alt="" />
+              <MDBRow no-gutters className="header">
+                <MDBCol lg="6" className="order-md-1 order-sm-1">
+                  <img src={Vision} className="img-fluid" alt="" />
                 </MDBCol>
-                <MDBCol lg="6" className="h1 text-center" style={{"margin-bottom": "0px"}}>
+                <MDBCol lg="6" className="h1 align-self-center order-md-2 order-sm-2" style={{"margin-bottom": "0px"}}>
                   <div className="h1">
                     <h1 style={{"margin-bottom": "0px"}}>Unsere Vision:</h1>
                     <h2 style={{"fontSize":"0.6em"}}>Unsere Vision ist es, den Menschen in Zukunft eine problemlose und sichere Zustellung ihrer Paketbestellungen zu garantieren und zugleich die überforderten Paketzusteller zu entlasten.</h2>
-                    <h2 style={{"fontSize":"0.6em"}}> </h2>
                   </div>
                 </MDBCol>
               </MDBRow>
-              <MDBRow no-gutters>
-                <MDBCol lg="6" className="h1" style={{"margin-bottom": "0px"}}>
+              <MDBRow no-gutters className="header">
+                <MDBCol lg="6" className="h1 align-self-center order-md-1 order-sm-2" style={{"margin-bottom": "0px"}}>
                   <div className="h1">
                     <h1>Unser Ziel:</h1>
                     <h2 style={{"fontSize":"0.6em"}}>Das Ziel von PAXET ist eine zukunftsfähige und reibungslose Paketzustellung, die den Alltag für Empfänger und Paketdienstleister durch den Einbezug privater Haushalte in den Zustellungsprozess vereinfacht und effizienter gestaltet.</h2>
                     </div>
                   </MDBCol>
-                  <MDBCol no-gutters lg="6">
-                    <img src={Hero} className="img-fluid" alt="" />
+                  <MDBCol no-gutters lg="6" className="order-md-2 order-sm-1">
+                    <img src={Goal} className="img-fluid" alt="" />
                   </MDBCol>
                 </MDBRow>
-                <MDBRow no-gutters>
+                <MDBRow no-gutters className="header">
                   <MDBCol no-gutters lg="6">
-                    <img src={Hero} className="img-fluid" alt="" />
+                    <img src={Task} className="img-fluid" alt="" />
                   </MDBCol>
-                  <MDBCol lg="6" className="h1" style={{"margin-bottom": "0px"}}>
+                  <MDBCol lg="6" className="h1 align-self-center" style={{"margin-bottom": "0px"}}>
                     <div className="h1">
                       <h1>Unsere Aufgabe:</h1>
                       <h2 style={{"fontSize":"0.6em"}}>Wir sehen es als unsere Aufgabe an, die wachsende Anzahl an Zustellproblemen zu minimieren, die überforderten Paketboten zu entlasten sowie das durch die Lieferwägen entstehende Verkehrsaufkommen und somit die Umweltbelastung zu reduzieren.</h2>
@@ -157,25 +162,41 @@ class Home extends React.Component {
 
               <section id='lösung'>
                 <MDBJumbotron fluid color="white" style={{"padding-top": "0px"}}>
-                  <MDBContainer fluid className="Jumbotron2" >
-                    <MDBRow>
-                      <MDBCol className="Platzhalter"size="12"/>
-                    </MDBRow>
+                  <MDBContainer fluid className="Jumbotron3" >
                     <MDBRow>
                       <MDBCol size="12">
-                        <h1> Unsere Lösung: </h1>
+                        <h1 style={{"margin-bottom": "0px", "color":"black", "margin-top":"1%"}}>Unsere Lösung:</h1>
+                      </MDBCol>
+                      <MDBCol className="" size="12">
+                        <img src={Concept} className="img-fluid" alt="" />
                       </MDBCol>
                     </MDBRow>
-                    <MDBRow >
-                      <MDBCol lg="6">
-                        <img src={Courier} className="img-fluid" alt="" />
+
+                    <MDBRow style={{"padding-left": "10%","padding-right": "10%"}}>
+                      <MDBCol lg="6" md="12">
+                        <img src={ConceptD} className="img-fluid" alt="" />
                       </MDBCol>
-                      <MDBCol lg="6" className="h1" style={{"margin-bottom": "0px"}}>
-                        <div className="h1">
-                          <h1 style={{"margin-bottom": "0px"}}>Paket-Hubs:</h1>
-                          <h2 style={{"fontSize":"0.6em"}}>Lorem Ipsum...</h2>
+                      <MDBCol className="align-self-center" style={{"fontSize":"0.5em"}}lg="6" md="12">>
+                        <div style={{"margin-bottom": "0px", "color":"black", "margin-left":"2%","margin-right":"2%", "fontSize":"1em"}}>
+                          <i className="fab fa-envira fa-5x" ></i><h2 style={{"margin-bottom":"5%"}}>Ihr tragt zur Entlastung der Probleme bei der Paketzustellung bei</h2><br/>
+                          <i className="fas fa-percent fa-5x" ></i><h2>Als Teilnehmer könnt ihr dazu beitragen, die Umwelt zu schonen</h2>
                         </div>
                       </MDBCol>
+                    </MDBRow>
+
+                    <MDBRow style={{"padding-left": "10%","padding-right": "10%"}}>
+                      <MDBCol className="align-self-center" style={{"fontSize":"0.5em"}}lg="6" md="12">>
+                        <div style={{"margin-bottom": "0px", "color":"black", "margin-left":"2%","margin-right":"2%", "fontSize":"1em"}}>
+                          <i className="fas fa-coins fa-5x" ></i><h2 style={{"margin-bottom":"5%"}}>Als Pakethub könnt ihr euch ein zusätzliches Taschengeld ohne große Mühe und Zeitaufwand verdienen</h2><br/>
+                          <i className="fas fa-users fa-5x" ></i><h2>Lernt neue Leute in eurem Wohnheim und der Umgebung kennen</h2>
+                        </div>
+                      </MDBCol>
+                      <MDBCol className="" lg="6" md="12">>
+                        <img src={ConceptP} className="img-fluid" alt="" />
+                      </MDBCol>
+                    </MDBRow>
+                    <MDBRow>
+                      <MDBCol className="Platzhalter"size="12"/>
                     </MDBRow>
                     </MDBContainer>
                   </MDBJumbotron>

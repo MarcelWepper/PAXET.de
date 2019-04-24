@@ -51,6 +51,14 @@ color: black;
 
 }
 
+.Jumbotron3{
+  text-align:center;
+  color: white;
+  margin-bottom: 0%;
+  background-color: #ffffff;
+
+}
+
 .Sup1{
   color: white;
   background: #7A1429;
@@ -81,11 +89,11 @@ color: black;
 
 .h1{
 
-  padding-left: 1.5%;
-  padding-right: 1.5%;
+  padding-left: 3%;
+  padding-right: 3%;
   text-align: center;
-  padding-top: 2%;
-  padding-bottom: 0%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   color: white;
   background-color: #4e0d1a;
 
@@ -93,11 +101,11 @@ color: black;
 
 .h2{
 
-  padding-left: 1.5%;
-  padding-right: 1.5%;
+  padding-left: 3%;
+  padding-right: 3%;
   text-align: center;
-  padding-top: 2%;
-  padding-bottom: 0%;
+  padding-top: 1%;
+  padding-bottom: 1%;
   color: white;
   background-color: #7A1429;
   text: center;
@@ -105,7 +113,7 @@ color: black;
 }
 .header{
 
-  background-color: #7A1429;
+  background-color: #4e0d1a;
 
 }
 
