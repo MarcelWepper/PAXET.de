@@ -66,10 +66,10 @@ class Home extends React.Component {
                 </MDBCol>
               </MDBRow>
               <MDBRow no-gutters className="header">
-                <MDBCol lg="6" className="order-md-1 order-sm-1">
+                <MDBCol lg="6" className="order-lg-1 order-md-1 order-sm-1 order-xs-1">
                   <img src={Vision} className="img-fluid" alt="" />
                 </MDBCol>
-                <MDBCol lg="6" className="h1 align-self-center order-md-2 order-sm-2" style={{"margin-bottom": "0px"}}>
+                <MDBCol lg="6" className="h1 align-self-center order-lg-2 order-md-2 order-sm-2 order-xs-2" style={{"margin-bottom": "0px"}}>
                   <div className="h1">
                     <h1 style={{"margin-bottom": "0px"}}>Unsere Vision:</h1>
                     <h2 style={{"fontSize":"0.6em"}}>Unsere Vision ist es, den Menschen in Zukunft eine problemlose und sichere Zustellung ihrer Paketbestellungen zu garantieren und zugleich die überforderten Paketzusteller zu entlasten.</h2>
@@ -77,21 +77,21 @@ class Home extends React.Component {
                 </MDBCol>
               </MDBRow>
               <MDBRow no-gutters className="header">
-                <MDBCol lg="6" className="h1 align-self-center order-md-1 order-sm-2" style={{"margin-bottom": "0px"}}>
+                <MDBCol lg="6" className="order-last order-lg-1 order-md-2 order-sm-2 h1 align-self-center" style={{"margin-bottom": "0px"}}>
                   <div className="h1">
                     <h1>Unser Ziel:</h1>
                     <h2 style={{"fontSize":"0.6em"}}>Das Ziel von PAXET ist eine zukunftsfähige und reibungslose Paketzustellung, die den Alltag für Empfänger und Paketdienstleister durch den Einbezug privater Haushalte in den Zustellungsprozess vereinfacht und effizienter gestaltet.</h2>
                     </div>
                   </MDBCol>
-                  <MDBCol no-gutters lg="6" className="order-md-2 order-sm-1">
+                  <MDBCol no-gutters lg="6" className="order-first order-lg-2 order-md-1 order-sm-1">
                     <img src={Goal} className="img-fluid" alt="" />
                   </MDBCol>
                 </MDBRow>
                 <MDBRow no-gutters className="header">
-                  <MDBCol no-gutters lg="6">
+                  <MDBCol no-gutters lg="6" className="order-lg-1 order-md-1 order-sm-1 order-xs-1">
                     <img src={Task} className="img-fluid" alt="" />
                   </MDBCol>
-                  <MDBCol lg="6" className="h1 align-self-center" style={{"margin-bottom": "0px"}}>
+                  <MDBCol lg="6" className="h1 align-self-center order-lg-2 order-md-2 order-sm-2 order-xs-2" style={{"margin-bottom": "0px"}}>
                     <div className="h1">
                       <h1>Unsere Aufgabe:</h1>
                       <h2 style={{"fontSize":"0.6em"}}>Wir sehen es als unsere Aufgabe an, die wachsende Anzahl an Zustellproblemen zu minimieren, die überforderten Paketboten zu entlasten sowie das durch die Lieferwägen entstehende Verkehrsaufkommen und somit die Umweltbelastung zu reduzieren.</h2>
@@ -113,47 +113,46 @@ class Home extends React.Component {
                   </MDBRow>
                   <MDBRow>
                     <MDBCol size="lg" md= "12" sm ="12" className="Padding">
-                    <MDBCard>
-                      <img src={Oli} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
-                      <MDBCardBody class="elegant-color dark-text rounded-bottom">
-                        <MDBCardTitle>Oliver <br/> Göbbel</MDBCardTitle>
-                        <hr class="hr-dark" />
-                        <MDBCardText class="dark-text">
-                          Vertrieb, Marketing, Organisation
-                        </MDBCardText>
-                      </MDBCardBody>
-                    </MDBCard>
-                    <br/>
-                </MDBCol>
-                <MDBCol size="lg" md= "12" sm ="12" className="Padding">
-                  <MDBCard>
-                    <img src={Thomas} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
-                    <MDBCardBody class="elegant-color dark-text rounded-bottom">
-                      <MDBCardTitle> Thomas <br/> Göbbel</MDBCardTitle>
-                      <hr class="hr-dark" />
-                      <MDBCardText className="dark-text">
-                        Strategie-, Finanzplanung
-                      </MDBCardText>
-                    </MDBCardBody>
-                  </MDBCard>
-                  <br/>
-                </MDBCol>
+                      <MDBCard>
+                        <img src={Thomas} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
+                        <MDBCardBody class="elegant-color dark-text rounded-bottom">
+                          <MDBCardTitle> Thomas <br/> Göbbel</MDBCardTitle>
+                          <hr class="hr-dark" />
+                          <MDBCardText className="dark-text">
+                            CEO
+                          </MDBCardText>
+                        </MDBCardBody>
+                      </MDBCard>
+                      <br/>
+                    </MDBCol>
+                    <MDBCol size="lg" md= "12" sm ="12" className="Padding">
+                      <MDBCard>
+                        <img src={Oli} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
+                          <MDBCardBody class="elegant-color dark-text rounded-bottom">
+                            <MDBCardTitle>Oliver <br/> Göbbel</MDBCardTitle>
+                            <hr class="hr-dark" />
+                            <MDBCardText class="dark-text">
+                              COO
+                            </MDBCardText>
+                          </MDBCardBody>
+                        </MDBCard>
+                      <br/>
+                    </MDBCol>
 
-                  <MDBCol size="lg" md= "12" sm ="12" className="Padding">
-                    <MDBCard>
-                      <img src={Marcel} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
-                      <MDBCardBody class="elegant-color dark-text rounded-bottom">
-                        <MDBCardTitle>Marcel <br/>Wepper</MDBCardTitle>
-                        <hr class="hr-dark" />
-                        <MDBCardText className="dark-text">
-                          Full-Stack-Developer, IT-Administrator
-                        </MDBCardText>
-                      </MDBCardBody>
-                    </MDBCard>
-                    <br/>
-                  </MDBCol>
-
-                </MDBRow>
+                    <MDBCol size="lg" md= "12" sm ="12" className="Padding">
+                      <MDBCard>
+                        <img src={Marcel} width="100%" height="100%" alt="ProfilePicture"rounded responsive />
+                        <MDBCardBody class="elegant-color dark-text rounded-bottom">
+                          <MDBCardTitle>Marcel <br/>Wepper</MDBCardTitle>
+                          <hr class="hr-dark" />
+                          <MDBCardText className="dark-text">
+                            CTO
+                          </MDBCardText>
+                        </MDBCardBody>
+                      </MDBCard>
+                      <br/>
+                    </MDBCol>
+                  </MDBRow>
                 </Animation>
               </MDBContainer>
 
