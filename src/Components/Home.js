@@ -422,7 +422,7 @@ class Home extends React.Component {
                       </div>
                       <MDBRow className="Sup2" style={{"background": "#7A1429" , "padding-top": "2%" , "padding-left": "5%","padding-right": "5%" , "display":"flex"}}>
                         <MDBCol size="12">
-                          <h1>PAXET eliminiert die Probleme der Paketzustellung und letzten Meile für alle Beteiligten und schafft bedeutende Vorteile, die in Zukunft notwendig und ausschlaggeben sein werden!</h1>
+                          <h1>PAXET eliminiert die Probleme der Paketzustellung und letzten Meile für alle Beteiligten und schafft bedeutende Vorteile, die in Zukunft notwendig und ausschlaggebend sein werden!</h1>
                         </MDBCol>
                       </MDBRow>
 

@@ -8,7 +8,7 @@ import './Home.css'
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 
-ReactGA.initialize('UA-133010328-1');
+ReactGA.initialize('UA-139520465-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 const initialState={
