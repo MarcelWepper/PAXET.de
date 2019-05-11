@@ -1,6 +1,6 @@
 {
-  "short_name": "Paxet",
-  "name": "Paxet",
+  "short_name": "PAXET",
+  "name": "PAXET",
   "icons": [
     {
       "src": "favicon.ico",
@@ -23,7 +23,7 @@
       "type": "image/png"
     }
 ],
-  "start_url": "./location",
+  "start_url": "./",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

@@ -18,7 +18,7 @@ class NavHome extends React.Component {
   componentDidUpdate(){
     if (this.state.collapse) {
       this.setState({
-      collapse:false
+      collapse:!this.state.collapse
       });
 
     }
@@ -52,11 +52,15 @@ class NavHome extends React.Component {
               <AnchorLink className="NavbarItem" offset='60' href='#team'>Team</AnchorLink>
             </MDBNavItem>
             <MDBNavItem>
-              <AnchorLink className="NavbarItem" offset='60' href='#lösung'>Lösung</AnchorLink>
+              <AnchorLink className="NavbarItem" offset='60' href='#Erklärung'>Probleme</AnchorLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/location" >Paket-Hubs</MDBNavLink>
+              <AnchorLink className="NavbarItem" offset='60' href='#Pakethubs'>Pakethubs</AnchorLink>
             </MDBNavItem>
+            <MDBNavItem>
+              <AnchorLink className="NavbarItem" offset='60' href='#Vorteile'>Vorteile</AnchorLink>
+            </MDBNavItem>
+
           </MDBNavbarNav>
         </MDBCollapse>
         </MDBNavbar>
