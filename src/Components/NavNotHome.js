@@ -46,12 +46,6 @@ class NavNotHome extends React.Component {
               <MDBNavLink to="/" >Home</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="/location" >Location</MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
-              <MDBNavLink to="/QR" >QR</MDBNavLink>
-            </MDBNavItem>
-            <MDBNavItem>
               <MDBNavLink to="/contact" >Contact</MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>
