@@ -70,23 +70,17 @@ class Home extends React.Component {
               </MDBRow>
               <MDBRow no-gutters>
                 <MDBCol size="12">
-                  <h1 style={{"margin-bottom": "2%","margin-top": "2%", "fontSize":"3em"}}>Die Paketzustellung von morgen</h1>
+                  <h1 style={{"margin-bottom": "1%","margin-top": "1%", "fontSize":"3em","margin-left": "1%","margin-right": "1%"}}>Die Paketzustellung von morgen</h1>
                 </MDBCol>
               </MDBRow>
               <MDBRow no-gutters>
-                <MDBCol className="Platzhalter"size="12"/>
-              </MDBRow>
-              <MDBRow no-gutters>
                 <MDBCol size="12">
-                  <h1 style={{"margin-bottom": "2%","margin-top": "2%","margin-left": "4%","margin-right": "4%", "fontSize":"2em"}}>Werde PAXET Pakethub und verdiene Geld durch das Annehmen von Paketen</h1>
+                  <h1 style={{"margin-bottom": "1%","margin-top": "1%","margin-left": "4%","margin-right": "4%", "fontSize":"2em"}}>Werde PAXET Pakethub und verdiene Geld durch das Annehmen von Paketen</h1>
                 </MDBCol>
               </MDBRow>
               <MDBRow no-gutters>
-                <MDBCol className="Platzhalter"size="12" style={{"margin-bottom": "1%","margin-top": "1%"}}/>
-              </MDBRow>
-              <MDBRow no-gutters>
                 <MDBCol size="12">
-                  <h1 style={{"margin-top": "2%", "fontSize":"2em"}}>Interesse geweckt?</h1>
+                  <h1 style={{"margin-top": "1%", "fontSize":"1em"}}>Interesse geweckt?</h1>
                   <MDBBtn outline color="danger" href="mailto:hey@paxet.de"> Schreib uns!</MDBBtn>
                 </MDBCol>
               </MDBRow>
@@ -97,9 +91,6 @@ class Home extends React.Component {
         <section id='idee'>
           <MDBJumbotron fluid color="white" no-gutters style={{"padding-top": "0px"}}>
             <MDBContainer className="Jumbotron" fluid no-gutters>
-              <MDBRow  no-gutters>
-                <MDBCol className="Platzhalter"size="12"/>
-              </MDBRow>
               <MDBRow className="header" no-gutters>
                 <MDBCol size="12">
                   <h1 style={{"margin-bottom": "2%","margin-top": "2%"}}>  Trete der PAXET-Community bei </h1>
