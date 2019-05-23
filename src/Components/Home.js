@@ -3,7 +3,7 @@ import LazyHero from 'react-lazy-hero';
 import CookieConsent from "react-cookie-consent";
 import {Helmet} from "react-helmet";
 import { Container, Row, Col } from 'reactstrap';
-import { Animation, MDBJumbotron, MDBContainer,MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText } from "mdbreact";
+import { Animation, MDBBtn, MDBJumbotron, MDBContainer,MDBRow, MDBCol, MDBCard, MDBCardBody, MDBCardTitle, MDBCardText } from "mdbreact";
 import { connect } from 'react-redux';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -46,6 +46,7 @@ import Arrow from './Pics/symbols/arrow.png';
 import One from './Pics/symbols/1.png';
 import Two from './Pics/symbols/2.png';
 import Three from './Pics/symbols/3.png';
+import Brand from './Pics/brand2.png';
 
 
 class Home extends React.Component {
@@ -60,31 +61,46 @@ class Home extends React.Component {
       <div className="Home Background">
 				{/* Hero-Image newes Version*/}
         <section id='home'>
-				   <LazyHero color = "#000000" parallaxOffset='50' minHeight='100vh' imageSrc={Hero} >
-            <Container className= "grid">
-              {/* 	Hier die trasnparente Box mit allem	*/}
-              <div className= "HeroText">
-                <Row>
-                  <Col><h1>PAXET</h1></Col>
-                </Row>
-                <Row>
-                  <Col><h2>Die Paketzustellung von morgen</h2></Col>
-                </Row>
-                <Row>
-                  <Col><h3>Seite im Aufbau...</h3></Col>
-                </Row>
-              </div>
-            </Container>
+				   <LazyHero color = "#ffffff" minHeight='100vh' style={{"background": "#ffffff"}}>
+            <MDBContainer className="Jumbotron3" fluid no-gutters>
+              <MDBRow no-gutters>
+                <MDBCol size="12">
+                  <h1 style={{"margin-bottom": "1%","margin-top": "1%", "fontSize":"5em"}}><b>PAXET</b></h1>
+                </MDBCol>
+              </MDBRow>
+              <MDBRow no-gutters>
+                <MDBCol size="12">
+                  <h1 style={{"margin-bottom": "2%","margin-top": "2%", "fontSize":"3em"}}>Die Paketzustellung von morgen</h1>
+                </MDBCol>
+              </MDBRow>
+              <MDBRow no-gutters>
+                <MDBCol className="Platzhalter"size="12"/>
+              </MDBRow>
+              <MDBRow no-gutters>
+                <MDBCol size="12">
+                  <h1 style={{"margin-bottom": "2%","margin-top": "2%","margin-left": "4%","margin-right": "4%", "fontSize":"2em"}}>Werde PAXET Pakethub und verdiene Geld durch das Annehmen von Paketen</h1>
+                </MDBCol>
+              </MDBRow>
+              <MDBRow no-gutters>
+                <MDBCol className="Platzhalter"size="12" style={{"margin-bottom": "1%","margin-top": "1%"}}/>
+              </MDBRow>
+              <MDBRow no-gutters>
+                <MDBCol size="12">
+                  <h1 style={{"margin-top": "2%", "fontSize":"2em"}}>Interesse geweckt?</h1>
+                  <MDBBtn outline color="danger" href="mailto:hey@paxet.de"> Schreib uns!</MDBBtn>
+                </MDBCol>
+              </MDBRow>
+            </MDBContainer>
           </LazyHero>
         </section>
 
         <section id='idee'>
           <MDBJumbotron fluid color="white" no-gutters style={{"padding-top": "0px"}}>
             <MDBContainer className="Jumbotron" fluid no-gutters>
-              <MDBRow no-gutters>
+              <MDBRow  no-gutters>
                 <MDBCol className="Platzhalter"size="12"/>
               </MDBRow>
-              <MDBRow no-gutters>
+              <MDBRow className="header" no-gutters>
                 <MDBCol size="12">
                   <h1 style={{"margin-bottom": "2%","margin-top": "2%"}}>  Trete der PAXET-Community bei </h1>
                 </MDBCol>
@@ -451,7 +467,7 @@ class Home extends React.Component {
 				{/*	Hier wird der Cookie und deren Parameter bestimmt	*/}
 				<CookieConsent
 		    location="bottom"
-        buttonText=<a href="/contact" >Weitere Informationen.</a>
+        buttonText=<a href="" >Akzeptieren.</a>
 		    cookieName="CookieConsent"
         acceptOnScroll={true}
         acceptOnScrollPercentage={10}
