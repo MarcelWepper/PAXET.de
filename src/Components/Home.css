@@ -1,94 +1,81 @@
-.background{
-  background-color:#7A1429;
-
+.background {
+  background-color: #7a1429;
 }
 
-.grid{
-	text-align: center;
-	border-radius: 20px;
-
+.grid {
+  text-align: center;
+  border-radius: 20px;
 }
-.HomeText{
+.HomeText {
   padding-top: 1%;
   padding-bottom: 1%;
   text-align: center;
-
-
 }
 
-.Home{
-  background-color: #7A1429;
-
+.Home {
+  background-color: #7a1429;
 }
 
-.Text{
-background-color: white;
-color: black;
-
+.Text {
+  background-color: white;
+  color: black;
 }
 
-.Cards{
+.Cards {
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 1.5%;
   padding-bottom: 1.5%;
-
 }
 
-.Jumbotron{
-  text-align:center;
-  color: white;
-  margin-bottom: 0%;
-  background-color: #7A1429;
-
-}
-
-.Jumbotron2{
-  text-align:center;
-  color: white;
-  margin-bottom: 0%;
-  background-color: #4e0d1a;
-
-}
-
-.Jumbotron3{
-  text-align:center;
-  color: #7A1429;
+.Jumbotron {
+  text-align: center;
+  color: black;
   margin-bottom: 0%;
   background-color: #ffffff;
-
 }
 
-.Sup1{
+.Jumbotron2 {
+  text-align: center;
   color: white;
-  background: #7A1429;
-
+  margin-bottom: 0%;
+  background-color: #4e0d1a;
 }
-.Sup2{
+
+.Jumbotron3 {
+  text-align: center;
+  color: #7a1429;
+  margin-bottom: 0%;
+  background-color: #ffffff;
+}
+
+.Sup1 {
+  color: black;
+  background: #ffffff;
+}
+.Sup2 {
   text-align: center;
   color: white;
   padding-top: 1%;
 }
 
-.NavbarItem{
+.NavbarItem {
   color: #fff;
-    transition: 0.35s;
-    padding-right: 6px;
-    padding-left: 6px;
-    display: block;
-    padding: .5rem 1rem;
-    position: relative;
-    overflow: hidden;
-    touch-action: none;
-    cursor: pointer;
-    text-decoration: none;
-    background-color: transparent;
-    box-sizing: border-box;
-
+  transition: 0.35s;
+  padding-right: 6px;
+  padding-left: 6px;
+  display: block;
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  touch-action: none;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+  box-sizing: border-box;
 }
 
-.h1{
-
+.h1 {
   padding-left: 3%;
   padding-right: 3%;
   text-align: center;
@@ -96,112 +83,97 @@ color: black;
   padding-bottom: 1%;
   color: white;
   background-color: #4e0d1a;
-
 }
 
-.h2{
-
+.h2 {
   padding-left: 3%;
   padding-right: 3%;
   text-align: center;
   padding-top: 1%;
   padding-bottom: 1%;
   color: white;
-  background-color: #7A1429;
+  background-color: #7a1429;
   text: center;
-
 }
-.header{
-
+.header {
   background-color: #4e0d1a;
-
 }
 
-.h2{
-
+.h2 {
   padding-left: 4%;
   padding-top: 4%;
   color: white;
   text: center;
   background-color: white;
-
 }
-.Padding{
-margin-left: 7.5px;
-margin-right: 7.5px;
-
+.Padding {
+  margin-left: 7.5px;
+  margin-right: 7.5px;
 }
 
-.HeroText{
-	color: white;
-	opacity: 1;
-	padding-top: 10px;
-	padding-bottom: 10px;
-
+.HeroText {
+  color: white;
+  opacity: 1;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.KontaktText{
+.KontaktText {
   padding-left: 5%;
   padding-top: 2.5%;
   padding-bottom: 2.5%;
   padding-right: 1%;
-
 }
 
-
-.Picture{
+.Picture {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 240px;
   height: 240px;
-
 }
 
 .SocialLinks {
-	color: white;
-	font-size: 5em;
+  color: white;
+  font-size: 5em;
   display: flex;
   text-align: center;
-	margin: auto;
-
+  margin: auto;
 }
 
-
-.Philosophie{
+.Philosophie {
   padding-top: 1.5%;
   padding-bottom: 2.5%;
-
 }
-.H1-Titel{
+.H1-Titel {
   text-align: center;
   padding-top: 5%;
   padding-bottom: 5%;
-
 }
 
-
-.Bild{
+.Bild {
   padding-bottom: 2%;
   padding-top: 1%;
   border-radius: 20px;
-
 }
 
-.Platzhalter{
+.Platzhalter {
   opacity: 0;
   padding: 0.5%;
 }
 
-.Info{
+.Info {
   background-color: lightgrey;
 }
 
-.Footer{
+.Footer {
   font-size: 20px;
-  color:white;
+  text-align: left;
+  color: white;
   padding-top: 1%;
   padding-bottom: 1%;
   background-color: #4e0d1a;
-
+}
+a {
+  color: #fff;
 }
