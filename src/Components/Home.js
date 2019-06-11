@@ -19,7 +19,13 @@ import {
   MDBModalHeader,
   MDBModalFooter,
   MDBInput,
-  MDBIcon
+  MDBIcon,
+  MDBCarousel,
+  MDBCarouselCaption,
+  MDBCarouselInner,
+  MDBCarouselItem,
+  MDBView,
+  MDBMask
 } from "mdbreact";
 import { connect } from "react-redux";
 
@@ -38,6 +44,7 @@ import Courier from "./Pics/courier.jpg";
 import Concept from "./Pics/concept.png";
 import ConceptD from "./Pics/conceptd.png";
 import ConceptP from "./Pics/conceptp.png";
+import Back from "./Pics/back.png";
 
 //Symbols
 import Approved from "./Pics/symbols/approved.png";
@@ -49,6 +56,8 @@ import Vorteil5 from "./Pics/symbols/Vorteil5.png";
 import Enkdunden from "./Pics/symbols/Enkdunden.png";
 import Pakethubs from "./Pics/symbols/Pakethubs.png";
 import Paketdienstleister from "./Pics/symbols/Paketdienstleister.png";
+import Play from "./Pics/symbols/play.png";
+import App from "./Pics/symbols/app.png";
 
 class Home extends React.Component {
   // Scroll to top when changing sites
@@ -67,13 +76,17 @@ class Home extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  componentDidMount() {
+    this.props.dispatch({ type: "NAVHOME" });
+  }
+
   render() {
     return (
       <div className="Home Background">
         {/* Hero-Image newes Version*/}
         <LazyHero
           color="#ffffff"
-          minHeight="90vh"
+          minHeight="95vh"
           style={{ background: "#ffffff" }}
         >
           <MDBContainer className="Jumbotron3" fluid no-gutters>
@@ -116,8 +129,8 @@ class Home extends React.Component {
                     fontSize: "2em"
                   }}
                 >
-                  Werde PAXET Pakethub und verdiene Geld durch das Annehmen von
-                  Paketen
+                  Nimm Pakete für Deine Nachbarn an und profitiere davon – als
+                  PAXET Pakethub.
                 </h1>
               </MDBCol>
             </MDBRow>
@@ -126,13 +139,118 @@ class Home extends React.Component {
                 <h1 style={{ "padding-top": "1%", fontSize: "1em" }}>
                   Interesse geweckt?
                 </h1>
-                <MDBBtn outline color="danger" onClick={this.toggle(14)}>
+                <MDBBtn
+                  outline
+                  color="danger"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSe8FCSxk7PVUXsMuc3o3YaaE5IV6zNl3g9AmnfN02DCeOdnnQ/viewform?vc=0&c=0&w=1"
+                >
                   Kontaktier uns!
                 </MDBBtn>
               </MDBCol>
             </MDBRow>
           </MDBContainer>
         </LazyHero>
+
+        <MDBContainer
+          className="Jumbotron"
+          fluid
+          no-gutters
+          style={{ "padding-bottom": "5%" }}
+        >
+          <MDBRow
+            className="Sup1"
+            style={{
+              display: "flex",
+              "padding-left": "0%",
+              "padding-right": "0%"
+            }}
+          >
+            <MDBCol size="12" style={{ "text-align": "center" }}>
+              <h1>So einfach funktioniert PAXET</h1>
+            </MDBCol>
+          </MDBRow>
+          <MDBCarousel
+            activeItem={1}
+            length={4}
+            showControls={true}
+            className="z-depth-1"
+          >
+            <MDBCarouselInner style={{ "max-height": "25vh" }}>
+              <MDBCarouselItem itemId="1" style={{ "max-height": "25vh" }}>
+                <MDBView className="d-flex align-content-top">
+                  <img
+                    className="d-block w-100"
+                    style={{ "max-height": "25vh" }}
+                    src={Back}
+                    alt="First slide"
+                  />
+                  <MDBMask overlay="black-light" />
+                </MDBView>
+
+                <MDBCarouselCaption>
+                  <h3 className="h3-responsive" style={{ fontSize: "1.5em" }}>
+                    Registriere dich als Pakethub bei PAXET
+                  </h3>
+                  <p>Schnell und einfach.</p>
+                </MDBCarouselCaption>
+              </MDBCarouselItem>
+              <MDBCarouselItem itemId="2" style={{ "max-height": "25vh" }}>
+                <MDBView className="d-flex align-content-center">
+                  <img
+                    className="d-block w-100"
+                    style={{ "max-height": "25vh" }}
+                    src={Back}
+                    alt="Second slide"
+                  />
+                  <MDBMask overlay="black-light" />
+                </MDBView>
+                <MDBCarouselCaption>
+                  <h3 className="h3-responsive">
+                    Werde als PAXET Pakethub sichtbar
+                  </h3>
+                  <p>Nur wenn Du Zeit und Lust hast.</p>
+                </MDBCarouselCaption>
+              </MDBCarouselItem>
+              <MDBCarouselItem itemId="3" style={{ "max-height": "25vh" }}>
+                <MDBView className="d-flex align-content-center">
+                  <img
+                    className="d-block w-100"
+                    style={{ "max-height": "25vh" }}
+                    src={Back}
+                    alt="Third slide"
+                  />
+                  <MDBMask overlay="black-light" />
+                </MDBView>
+                <MDBCarouselCaption>
+                  <h3
+                    className="h3-responsive"
+                    style={{ "text-align": "center" }}
+                  >
+                    Nimm Pakete an
+                  </h3>
+                  <p>Sei stolz auf dich!</p>
+                </MDBCarouselCaption>
+              </MDBCarouselItem>
+              <MDBCarouselItem itemId="4" style={{ "max-height": "25vh" }}>
+                <MDBView className="d-flex align-content-center">
+                  <img
+                    className="d-block w-100"
+                    style={{ "max-height": "25vh" }}
+                    src={Back}
+                    alt="Forth slide"
+                  />
+                  <MDBMask overlay="black-light" />
+                </MDBView>
+                <MDBCarouselCaption>
+                  <h3 className="h3-responsive">
+                    Übergib das Paket an den Empfänger
+                  </h3>
+                  <p>Sie werden dir danken.</p>
+                </MDBCarouselCaption>
+              </MDBCarouselItem>
+            </MDBCarouselInner>
+          </MDBCarousel>
+        </MDBContainer>
 
         <MDBJumbotron
           fluid
@@ -192,7 +310,7 @@ class Home extends React.Component {
                     style={{ "border-radius": "24px" }}
                     rounded
                     color="danger"
-                    href="/endkunde"
+                    href="#"
                   >
                     Mehr erfahren!
                   </MDBBtn>
@@ -218,7 +336,7 @@ class Home extends React.Component {
                     style={{ "border-radius": "24px" }}
                     rounded
                     color="danger"
-                    href="/pakethubs"
+                    href="#"
                   >
                     Mehr erfahren!
                   </MDBBtn>
@@ -244,86 +362,10 @@ class Home extends React.Component {
                     style={{ "border-radius": "24px" }}
                     rounded
                     color="danger"
-                    href="/pxaketdienstleister"
+                    href="#"
                   >
                     Mehr erfahren!
                   </MDBBtn>
-                  <br />
-                </MDBCol>
-              </MDBRow>
-
-              <MDBRow
-                className="Sup1"
-                style={{
-                  "padding-top": "10%",
-                  display: "flex"
-                }}
-              >
-                <MDBCol size="12">
-                  <h1>So einfach funktioniert PAXET</h1>
-                </MDBCol>
-              </MDBRow>
-              <MDBRow
-                style={{
-                  "padding-left": "10%",
-                  "padding-right": "10%",
-                  "padding-top": "2.5%",
-                  height: "5%"
-                }}
-              >
-                <MDBCol
-                  size="lg"
-                  md="12"
-                  sm="12"
-                  className="align-self-center"
-                  style={{ fontSize: "0.5em", "padding-top": "2.5%" }}
-                >
-                  <img
-                    src={Approved}
-                    className="img-fluid"
-                    style={{ width: "20%", height: "20%" }}
-                    alt=""
-                  />
-                  <h2 style={{ "padding-bottom": "5%" }}>
-                    100% <br />
-                    Zustellsicherheit
-                  </h2>
-                  <br />
-                </MDBCol>
-                <MDBCol
-                  size="lg"
-                  md="12"
-                  sm="12"
-                  className="align-self-center"
-                  style={{ fontSize: "0.5em" }}
-                >
-                  <img
-                    src={Approved}
-                    className="img-fluid"
-                    style={{ width: "20%", height: "20%" }}
-                    alt=""
-                  />
-                  <h2 style={{ "padding-bottom": "5%" }}>
-                    Mehr Zustellungen in kürzerer Zeit
-                  </h2>
-                  <br />
-                </MDBCol>
-                <MDBCol
-                  size="lg"
-                  md="12"
-                  sm="12"
-                  className="align-self-center"
-                  style={{ fontSize: "0.5em" }}
-                >
-                  <img
-                    src={Approved}
-                    className="img-fluid"
-                    style={{ width: "20%", height: "20%" }}
-                    alt=""
-                  />
-                  <h2 style={{ "padding-bottom": "5%" }}>
-                    Keine Mehrmaligen Zustellversuche
-                  </h2>
                   <br />
                 </MDBCol>
               </MDBRow>
@@ -347,7 +389,7 @@ class Home extends React.Component {
               className="Sup2"
               style={{
                 background: "#7A1429",
-                "padding-top": "2%",
+                "padding-top": "4%",
                 "padding-left": "5%",
                 "padding-right": "5%",
                 display: "flex"
@@ -358,7 +400,11 @@ class Home extends React.Component {
                 md="12"
                 sm="12"
                 className="align-self-center"
-                style={{ fontSize: "0.5em" }}
+                style={{
+                  fontSize: "0.5em",
+                  "padding-left": "0.25%",
+                  "padding-right": "0.25%"
+                }}
               >
                 <img
                   src={Vorteil1}
@@ -376,7 +422,11 @@ class Home extends React.Component {
                 md="12"
                 sm="12"
                 className="align-self-center"
-                style={{ fontSize: "0.5em" }}
+                style={{
+                  fontSize: "0.5em",
+                  "padding-left": "0.25%",
+                  "padding-right": "0.25%"
+                }}
               >
                 <img
                   src={Vorteil2}
@@ -394,7 +444,11 @@ class Home extends React.Component {
                 md="12"
                 sm="12"
                 className="align-self-center"
-                style={{ fontSize: "0.5em" }}
+                style={{
+                  fontSize: "0.5em",
+                  "padding-left": "0.25%",
+                  "padding-right": "0.25%"
+                }}
               >
                 <img
                   src={Vorteil3}
@@ -412,7 +466,11 @@ class Home extends React.Component {
                 md="12"
                 sm="12"
                 className="align-self-center"
-                style={{ fontSize: "0.5em" }}
+                style={{
+                  fontSize: "0.5em",
+                  "padding-left": "0.25%",
+                  "padding-right": "0.25%"
+                }}
               >
                 <img
                   src={Vorteil4}
@@ -430,7 +488,11 @@ class Home extends React.Component {
                 md="12"
                 sm="12"
                 className="align-self-center"
-                style={{ fontSize: "0.5em" }}
+                style={{
+                  fontSize: "0.5em",
+                  "padding-left": "0.25%",
+                  "padding-right": "0.25%"
+                }}
               >
                 <img
                   src={Vorteil5}
@@ -474,10 +536,80 @@ class Home extends React.Component {
                   style={{ "border-radius": "24px" }}
                   rounded
                   color="danger"
-                  onClick={this.toggle(14)}
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSe8FCSxk7PVUXsMuc3o3YaaE5IV6zNl3g9AmnfN02DCeOdnnQ/viewform?vc=0&c=0&w=1"
                 >
                   Jetzt Teil werden!
                 </MDBBtn>
+              </MDBCol>
+            </MDBRow>
+            <MDBRow
+              style={{
+                "padding-left": "10%",
+                "padding-right": "10%",
+                height: "5%"
+              }}
+            >
+              <MDBCol
+                size="lg"
+                md="12"
+                sm="12"
+                className="align-self-center"
+                style={{ fontSize: "0.5em", "padding-top": "7.5%" }}
+              >
+                <a href="https://itunes.apple.com/us/app/paxet/id1461056040?l=en&ls=1&mt=8">
+                  <img
+                    src={App}
+                    className="img-fluid"
+                    style={{ width: "15vh", height: "15vh" }}
+                    alt=""
+                  />
+                </a>
+                <h2
+                  style={{ "padding-bottom": "0.25%", "padding-top": "0.25%" }}
+                >
+                  {" "}
+                  <br />{" "}
+                </h2>
+                <MDBBtn
+                  style={{ "border-radius": "24px" }}
+                  rounded
+                  color="danger"
+                  href="https://itunes.apple.com/us/app/paxet/id1461056040?l=en&ls=1&mt=8"
+                >
+                  App-Store für iOS
+                </MDBBtn>
+                <br />
+              </MDBCol>
+              <MDBCol
+                size="lg"
+                md="12"
+                sm="12"
+                className="align-self-center"
+                style={{ fontSize: "0.5em", "padding-top": "7.5%" }}
+              >
+                <a href="https://play.google.com/store/apps/details?id=com.paxet.app">
+                  <img
+                    src={Play}
+                    className="img-fluid"
+                    style={{ width: "15vh", height: "15vh" }}
+                    alt=""
+                  />
+                </a>
+                <h2
+                  style={{ "padding-bottom": "0.25%", "padding-top": "0.25%" }}
+                >
+                  {" "}
+                  <br />{" "}
+                </h2>
+                <MDBBtn
+                  style={{ "border-radius": "24px" }}
+                  rounded
+                  color="danger"
+                  href="https://play.google.com/store/apps/details?id=com.paxet.app"
+                >
+                  Play Store für Android
+                </MDBBtn>
+                <br />
               </MDBCol>
             </MDBRow>
           </MDBContainer>

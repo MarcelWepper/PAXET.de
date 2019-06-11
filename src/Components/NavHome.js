@@ -58,18 +58,16 @@ class NavHome extends React.Component {
                 <MDBNavLink to="/">Home</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="/endkunde">Endkunde</MDBNavLink>
+                <MDBNavLink to="#">Endkunde</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="/pakethubs">Pakethubs</MDBNavLink>
+                <MDBNavLink to="#">Pakethubs</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="/paketdienstleister">
-                  Paketdienstleister
-                </MDBNavLink>
+                <MDBNavLink to="#">Paketdienstleister</MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="/team">Team</MDBNavLink>
+                <MDBNavLink to="#">Team</MDBNavLink>
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>
