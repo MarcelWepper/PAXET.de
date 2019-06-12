@@ -77,7 +77,7 @@ export default class Footer extends React.Component {
                     <tr>
                       <td>
                         <h2>
-                          <h1>PAXET</h1> Die Paketzustellung von morgen
+                          <h1>PAXET -</h1> Die Paketzustellung von morgen
                         </h2>
                       </td>
                     </tr>

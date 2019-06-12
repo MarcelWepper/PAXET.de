@@ -50,13 +50,18 @@
 }
 
 .Sup1 {
+  text-align: center;
   color: black;
   background: #ffffff;
 }
 .Sup2 {
   text-align: center;
   color: white;
-  padding-top: 1%;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .NavbarItem {

@@ -68,16 +68,6 @@ import App from "./Pics/symbols/app.png";
 class Home extends React.Component {
   // Scroll to top when changing sites
 
-  state = {
-    modal14: false
-  };
-
-  toggle = nr => () => {
-    let modalNumber = "modal" + nr;
-    this.setState({
-      [modalNumber]: !this.state[modalNumber]
-    });
-  };
   componentWillUnmount() {
     window.scrollTo(0, 0);
   }
@@ -135,7 +125,7 @@ class Home extends React.Component {
                     fontSize: "2em"
                   }}
                 >
-                  Nimm Pakete für Deine Nachbarn an und profitiere davon – als
+                  Nimm Pakete für deine Nachbarn an und profitiere davon – als
                   PAXET Pakethub.
                 </h1>
               </MDBCol>
@@ -216,7 +206,7 @@ class Home extends React.Component {
                     Werde als PAXET Pakethub sichtbar
                   </h3>
                   <p>
-                    Nur wenn Du sowieso anwesend bist und Lust hast, Pakete
+                    Nur wenn du sowieso anwesend bist und Lust hast, Pakete
                     anzunehmen.
                   </p>
                 </MDBCarouselCaption>
@@ -236,9 +226,9 @@ class Home extends React.Component {
                     className="h3-responsive"
                     style={{ "text-align": "center" }}
                   >
-                    Nehm Pakete für Deine Nachbarn und Umgebung entgegen
+                    Nehm Pakete für deine Nachbarn und Umgebung entgegen
                   </h3>
-                  <p>Deine Nachbarn und die Paketboten werden Dir danken</p>
+                  <p>deine Nachbarn und die Paketboten werden Dir danken</p>
                 </MDBCarouselCaption>
               </MDBCarouselItem>
               <MDBCarouselItem itemId="4" style={{ "max-height": "35vh" }}>
@@ -256,7 +246,7 @@ class Home extends React.Component {
                     Übergib das Paket an den Empfänger des Pakets
                   </h3>
                   <p>
-                    Du kannst stolz sein, zur Problemlösung der letzten Meile
+                    du kannst stolz sein, zur Problemlösung der letzten Meile
                     beigetragen zu haben
                   </p>
                 </MDBCarouselCaption>
@@ -286,7 +276,7 @@ class Home extends React.Component {
                   "padding-right": "2.5%"
                 }}
               >
-                <h1>PAXET- Eine Lösung für jeden auf der letzten Meile</h1>
+                <h1>PAXET - Eine Lösung für jeden auf der letzten Meile</h1>
               </MDBCol>
             </MDBRow>
             <div
@@ -395,7 +385,7 @@ class Home extends React.Component {
                 <MDBCol
                   size="12"
                   style={{
-                    "padding-top": "10%",
+                    "padding-top": "7.5%",
                     "padding-left": "2.5%",
                     "padding-right": "2.5%"
                   }}
@@ -433,7 +423,7 @@ class Home extends React.Component {
                             </td>
                           </tr>
                           <tr>
-                            <td style={{ height: "25ch" }}>
+                            <td style={{ height: "27ch" }}>
                               <h2
                                 style={{
                                   "padding-bottom": "5%",
@@ -454,7 +444,8 @@ class Home extends React.Component {
                                   size: "0.5em"
                                 }}
                               >
-                                Schnell und einfach
+                                Die Registrierung geht schnell und einfach über
+                                unser Formular
                               </h3>
                             </td>
                           </tr>
@@ -478,7 +469,7 @@ class Home extends React.Component {
                             </td>
                           </tr>
                           <tr>
-                            <td style={{ height: "25ch" }}>
+                            <td style={{ height: "27ch" }}>
                               <h2
                                 style={{
                                   "padding-bottom": "5%",
@@ -499,7 +490,7 @@ class Home extends React.Component {
                                   size: "0.5em"
                                 }}
                               >
-                                Nur wenn Du sowieso anwesend bist und Lust hast,
+                                Nur wenn du sowieso anwesend bist und Lust hast,
                                 Pakete anzunehmen
                               </h3>
                             </td>
@@ -524,14 +515,14 @@ class Home extends React.Component {
                             </td>
                           </tr>
                           <tr>
-                            <td style={{ height: "25ch" }}>
+                            <td style={{ height: "27ch" }}>
                               <h2
                                 style={{
                                   "padding-bottom": "5%",
                                   "padding-top": "2%"
                                 }}
                               >
-                                Nehm Pakete für Deine Nachbarn und Umgebung
+                                Nehm Pakete für deine Nachbarn und Umgebung
                                 entgegen
                               </h2>
                             </td>
@@ -571,7 +562,7 @@ class Home extends React.Component {
                             </td>
                           </tr>
                           <tr>
-                            <td style={{ height: "25ch" }}>
+                            <td style={{ height: "27ch" }}>
                               <h2
                                 style={{
                                   "padding-bottom": "5%",
@@ -608,7 +599,7 @@ class Home extends React.Component {
             <MDBRow
               className="Sup1"
               style={{
-                "padding-top": "7.5%",
+                "padding-top": "5%",
                 display: "flex"
               }}
             >
@@ -624,9 +615,8 @@ class Home extends React.Component {
               style={{
                 background: "#7A1429",
                 "padding-top": "4%",
-                "padding-left": "5%",
-                "padding-right": "5%",
-                display: "flex"
+                "padding-left": "2.5%",
+                "padding-right": "2.5%"
               }}
             >
               <MDBCol
@@ -635,7 +625,7 @@ class Home extends React.Component {
                 sm="12"
                 className="align-self-top"
                 style={{
-                  fontSize: "0.5em",
+                  fontSize: "0.3em",
                   "padding-left": "0.25%",
                   "padding-right": "0.25%"
                 }}
@@ -643,15 +633,19 @@ class Home extends React.Component {
                 <MDBTable borderless responsive>
                   <MDBTableBody>
                     <div>
-                      <tr>
+                      <tr className="d-flex justify-content-center">
                         <td className="align-top" style={{ height: "10ch" }}>
                           <img src={Vorteil1} className="img-fluid" alt="" />
                         </td>
                       </tr>
-                      <tr>
+                      <tr className="d-flex justify-content-center">
                         <td>
                           <h2
-                            style={{ "padding-bottom": "5%", color: "white" }}
+                            style={{
+                              "padding-bottom": "5%",
+                              color: "white",
+                              fontSize: "2em"
+                            }}
                           >
                             Zukunftsfähige Lösung für die stark wachsende
                             Paketbranche
@@ -668,7 +662,7 @@ class Home extends React.Component {
                 sm="12"
                 className="align-self-top"
                 style={{
-                  fontSize: "0.5em",
+                  fontSize: "0.3em",
                   "padding-left": "0.25%",
                   "padding-right": "0.25%"
                 }}
@@ -676,15 +670,19 @@ class Home extends React.Component {
                 <MDBTable borderless responsive>
                   <MDBTableBody>
                     <div>
-                      <tr>
+                      <tr className="d-flex justify-content-center">
                         <td className="align-top" style={{ height: "10ch" }}>
                           <img src={Vorteil2} className="img-fluid" alt="" />
                         </td>
                       </tr>
-                      <tr>
+                      <tr className="d-flex justify-content-center">
                         <td>
                           <h2
-                            style={{ "padding-bottom": "5%", color: "white" }}
+                            style={{
+                              "padding-bottom": "5%",
+                              color: "white",
+                              fontSize: "2em"
+                            }}
                           >
                             Effiziente und zeitsparende Zustellung für
                             Paketboten
@@ -701,26 +699,30 @@ class Home extends React.Component {
                 sm="12"
                 className="align-self-top"
                 style={{
-                  fontSize: "0.5em",
-                  "padding-left": "0.25%",
-                  "padding-right": "0.25%"
+                  fontSize: "0.3em",
+                  "padding-left": "0.125%",
+                  "padding-right": "0.125%"
                 }}
               >
                 <MDBTable borderless responsive>
                   <MDBTableBody>
                     <div>
-                      <tr>
+                      <tr className="d-flex justify-content-center">
                         <td className="align-top" style={{ height: "10ch" }}>
                           <img src={Vorteil3} className="img-fluid" alt="" />
                         </td>
                       </tr>
-                      <tr>
+                      <tr className="d-flex justify-content-center">
                         <td>
                           <h2
-                            style={{ "padding-bottom": "5%", color: "white" }}
+                            style={{
+                              "padding-bottom": "5%",
+                              color: "white",
+                              fontSize: "2em"
+                            }}
                           >
                             Entlastung der Umwelt durch die Verringerung des
-                            Verkehrsaufkommens
+                            Verkehrs
                           </h2>
                         </td>
                       </tr>
@@ -734,7 +736,7 @@ class Home extends React.Component {
                 sm="12"
                 className="align-self-top"
                 style={{
-                  fontSize: "0.5em",
+                  fontSize: "0.3em",
                   "padding-left": "0.25%",
                   "padding-right": "0.25%"
                 }}
@@ -742,15 +744,19 @@ class Home extends React.Component {
                 <MDBTable borderless responsive>
                   <MDBTableBody>
                     <div>
-                      <tr>
+                      <tr className="d-flex justify-content-center">
                         <td className="align-top" style={{ height: "10ch" }}>
                           <img src={Vorteil4} className="img-fluid" alt="" />
                         </td>
                       </tr>
-                      <tr>
+                      <tr className="d-flex justify-content-center">
                         <td>
                           <h2
-                            style={{ "padding-bottom": "5%", color: "white" }}
+                            style={{
+                              "padding-bottom": "5%",
+                              color: "white",
+                              fontSize: "2em"
+                            }}
                           >
                             Einfache Möglichkeit ein zusätzliches Taschengeld
                             als Pakethub zu verdienen
@@ -767,7 +773,6 @@ class Home extends React.Component {
                 sm="12"
                 className="align-self-top"
                 style={{
-                  fontSize: "0.5em",
                   "padding-left": "0.25%",
                   "padding-right": "0.25%"
                 }}
@@ -775,18 +780,22 @@ class Home extends React.Component {
                 <MDBTable borderless responsive>
                   <MDBTableBody>
                     <div>
-                      <tr>
+                      <tr className="d-flex justify-content-center">
                         <td className="align-top" style={{ height: "10ch" }}>
                           <img src={Vorteil5} className="img-fluid" alt="" />
                         </td>
                       </tr>
-                      <tr>
+                      <tr className="d-flex justify-content-center">
                         <td>
                           <h2
-                            style={{ "padding-bottom": "5%", color: "white" }}
+                            style={{
+                              "padding-bottom": "5%",
+                              color: "white",
+                              fontSize: "2em"
+                            }}
                           >
-                            Entwicklung und Förderung eines sozialen
-                            Nachbarschaftsnetzwerks
+                            Entwicklung und Förderung einer Gemeinschaft
+                            zwischen den Nachbarn
                           </h2>
                         </td>
                       </tr>
@@ -814,7 +823,7 @@ class Home extends React.Component {
                     fontSize: "2em"
                   }}
                 >
-                  <b>Immernoch kein Mitglied der PAXET Community?</b>
+                  <b>Noch kein Mitglied der PAXET Community?</b>
                 </h2>
               </MDBCol>
             </MDBRow>
@@ -831,6 +840,7 @@ class Home extends React.Component {
                 </MDBBtn>
               </MDBCol>
             </MDBRow>
+            {/*
             <MDBRow
               style={{
                 "padding-left": "10%",
@@ -901,75 +911,9 @@ class Home extends React.Component {
                 <br />
               </MDBCol>
             </MDBRow>
+                    */}
           </MDBContainer>
         </MDBJumbotron>
-
-        {/*	Modal für Contact	*/}
-        <MDBContainer>
-          <MDBModal
-            isOpen={this.state.modal14}
-            toggle={this.toggle(14)}
-            centered
-          >
-            <MDBModalHeader toggle={this.toggle(14)}>
-              Kontaktformular
-            </MDBModalHeader>
-            <MDBModalBody>
-              <MDBRow style={{ "margin-left": "5%" }}>
-                <MDBCol md="6">
-                  <form>
-                    <p className="h5 text-center mb-4">Schreib uns</p>
-                    <div className="grey-text">
-                      <MDBInput
-                        label="Dein Name"
-                        icon="user"
-                        group
-                        type="text"
-                        validate
-                        error="wrong"
-                        success="right"
-                      />
-                      <MDBInput
-                        label="Deine Mail-Adresse"
-                        icon="envelope"
-                        group
-                        type="email"
-                        validate
-                        error="wrong"
-                        success="right"
-                      />
-                      <MDBInput
-                        label="Betreff"
-                        icon="tag"
-                        group
-                        type="text"
-                        validate
-                        error="wrong"
-                        success="right"
-                      />
-                      <MDBInput
-                        type="textarea"
-                        rows="2"
-                        label="Deine Nachricht"
-                        icon="pencil-alt"
-                      />
-                    </div>
-                    <div className="text-center">
-                      <MDBBtn
-                        outline
-                        color="secondary"
-                        onClick={this.toggle(14)}
-                      >
-                        Schicken{" "}
-                        <MDBIcon far icon="paper-plane" className="ml-1" />
-                      </MDBBtn>
-                    </div>
-                  </form>
-                </MDBCol>
-              </MDBRow>
-            </MDBModalBody>
-          </MDBModal>
-        </MDBContainer>
 
         {/*	Hier wird der Cookie und deren Parameter bestimmt	*/}
         <CookieConsent
