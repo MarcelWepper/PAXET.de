@@ -83,7 +83,7 @@ export default class Footer extends React.Component {
                     </tr>
                     <tr>
                       <td>
-                        <NavLink style={{ color: "white" }} to="/contact">
+                        <NavLink style={{ color: "white" }} to="/impressum">
                           <h2> Impressum </h2>{" "}
                         </NavLink>
                       </td>

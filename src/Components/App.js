@@ -1,40 +1,37 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactGA from 'react-ga';
-import Header from './Header'
-import Main from './Main'
-import Footer from './Footer'
-import './Home.css'
-import {createStore} from "redux";
-import {Provider} from "react-redux";
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ReactGA from "react-ga";
+import Header from "./Header";
+import Main from "./Main";
+import Footer from "./Footer";
+import "./Home.css";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
 
-ReactGA.initialize('UA-139520465-1');
+ReactGA.initialize("UA-139520465-1");
 ReactGA.pageview(window.location.pathname + window.location.search);
 
-const initialState={
+const initialState = {
   home: "home",
   nav: "false"
-
 };
 
-function reducer(state = initialState, action){
-  console.log(action)
+function reducer(state = initialState, action) {
+  console.log(action);
   switch (action.type) {
     case "NAVCHANGE":
-      return{
+      return {
         home: "nothome"
-
       };
-      case "NAVHOME":
-        return{
-          home: "home"
-
-        };
-        case "NAVLOCATION":
-          return{
-            home: "location"
-          };
-
+    case "NAVHOME":
+      return {
+        home: "home",
+        navtoggle: false
+      };
+    case "NAVLOCATION":
+      return {
+        home: "location"
+      };
 
     default:
       return state;
@@ -44,8 +41,8 @@ function reducer(state = initialState, action){
 const store = createStore(reducer);
 
 export default class App extends React.Component {
-    render(){
-      return(
+  render() {
+    return (
       <Provider store={store}>
         <div>
           <Header />

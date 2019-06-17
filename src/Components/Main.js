@@ -6,6 +6,8 @@ import Contact from "./Contact";
 import Endkunde from "./Endkunde";
 import Team from "./Team";
 import Paketdienstleister from "./Paketdienstleister";
+import Pakethub from "./Pakethub";
+import Impressum from "./Impressum";
 
 import "./Home.css";
 
@@ -21,6 +23,8 @@ const Main = () => (
       <Route exact path="/endkunde" component={Endkunde} />
       <Route exact path="/paketdienstleister" component={Paketdienstleister} />
       <Route exact path="/team" component={Team} />
+      <Route exact path="/pakethub" component={Pakethub} />
+      <Route exact path="/impressum" component={Impressum} />
       <Route exact path="/contact" component={Contact} />
     </Switch>
   </main>

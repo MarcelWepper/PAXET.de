@@ -4,7 +4,7 @@ import CookieConsent from "react-cookie-consent";
 import { Helmet } from "react-helmet";
 import { Container, Row, Col } from "reactstrap";
 import {
-  Animation,
+  MDBAnimation,
   MDBBtn,
   MDBJumbotron,
   MDBContainer,
@@ -27,7 +27,14 @@ import {
   MDBView,
   MDBMask,
   MDBTable,
-  MDBTableBody
+  MDBTableBody,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavbarToggler,
+  MDBCollapse,
+  MDBNavItem,
+  MDBNavLink
 } from "mdbreact";
 import { connect } from "react-redux";
 
@@ -39,6 +46,9 @@ import Vorteil3 from "./Pics/symbols/Vorteil3.png";
 import S1 from "./Pics/symbols/1.png";
 import S2 from "./Pics/symbols/2.png";
 import Enkdunden from "./Pics/symbols/Enkdunden.png";
+import W1 from "./Pics/w1.png";
+import W2 from "./Pics/w2.png";
+import W3 from "./Pics/w3.png";
 
 class Endkunde extends React.Component {
   // Scroll to top when changing sites
@@ -46,17 +56,76 @@ class Endkunde extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapse: false
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+
   componentDidMount() {
     this.props.dispatch({ type: "NAVHOME" });
+    if (this.state.collapse) {
+      this.setState({
+        collapse: !this.state.collapse
+      });
+    }
+  }
+
+  onClick() {
+    this.setState({
+      collapse: !this.state.collapse
+    });
   }
 
   render() {
     return (
       <div className="Home Background">
+        <div>
+          <MDBNavbar
+            className="header"
+            expand="md"
+            fixed="top"
+            scrolling
+            transparent
+            dark
+          >
+            <MDBNavbarBrand>
+              <a style={{ color: "white" }} href="/endkunde">
+                <strong>PAXET - Endkunde</strong>
+              </a>
+            </MDBNavbarBrand>
+            {!this.state.isWideEnough && (
+              <MDBNavbarToggler onClick={this.onClick} />
+            )}
+            <MDBCollapse isOpen={this.state.collapse} navbar>
+              <MDBNavbarNav right>
+                <MDBNavItem>
+                  <MDBNavLink to="/">Home</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem active>
+                  <MDBNavLink to="/endkunde">Endkunde</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/pakethub">Pakethubs</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/paketdienstleister">
+                    Paketdienstleister
+                  </MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/team">Team</MDBNavLink>
+                </MDBNavItem>
+              </MDBNavbarNav>
+            </MDBCollapse>
+          </MDBNavbar>
+        </div>
         {/* Hero-Image newes Version*/}
         <LazyHero
           color="#ffffff"
-          minHeight="70vh"
+          minHeight="55vh"
           style={{ background: "#ffffff" }}
         >
           <MDBContainer className="Jumbotron3" fluid no-gutters>
@@ -127,37 +196,42 @@ class Endkunde extends React.Component {
             >
               <MDBRow
                 style={{
-                  "padding-left": "10%",
-                  "padding-top": "2.5%",
-                  "padding-right": "10%",
-                  height: "5%"
+                  "padding-left": "15%",
+                  "padding-right": "15%"
                 }}
               >
                 <MDBCol
-                  size="lg"
-                  md="12"
-                  sm="12"
+                  size="5"
+                  className="align-self-center"
+                  style={{
+                    fontSize: "0.5em",
+                    "padding-top": "2.5%",
+                    "padding-right": "-50%"
+                  }}
+                >
+                  <MDBAnimation duration="1.5s" type="fadeInLeftBig">
+                    <img src={W1} className="img-fluid" alt="" />
+                  </MDBAnimation>
+                </MDBCol>
+
+                <MDBCol
+                  size="2"
+                  className="align-self-center"
+                  style={{
+                    fontSize: "0.5em",
+                    "padding-top": "2.5%",
+                    "padding-left": "-50%",
+                    "padding-right": "-50%"
+                  }}
+                >
+                  <img src={W2} className="img-fluid" alt="" />
+                </MDBCol>
+                <MDBCol
+                  size="5"
                   className="align-self-center"
                   style={{ fontSize: "0.5em", "padding-top": "2.5%" }}
                 >
-                  <img
-                    src={Enkdunden}
-                    className="img-fluid"
-                    style={{ width: "20%", height: "20%" }}
-                    alt=""
-                  />
-                  <h2 style={{ "padding-bottom": "5%", "padding-top": "2%" }}>
-                    Für Endkunden
-                  </h2>
-                  <MDBBtn
-                    style={{ "border-radius": "24px" }}
-                    rounded
-                    color="danger"
-                    href="#"
-                  >
-                    Mehr erfahren!
-                  </MDBBtn>
-                  <br />
+                  <img src={W3} className="img-fluid" alt="" />
                 </MDBCol>
               </MDBRow>
             </div>
@@ -224,7 +298,8 @@ class Endkunde extends React.Component {
                                   "padding-top": "2%"
                                 }}
                               >
-                                Du holst Dein Paket beim PAXET-Pakethub ab
+                                Du holst dir Dein Paket beim PAXET-Pakethub
+                                selber ab
                               </h2>
                             </td>
                           </tr>
@@ -451,28 +526,35 @@ class Endkunde extends React.Component {
                     <MDBTableBody>
                       <div>
                         <tr>
-                          <td style={{ height: "27ch" }}>
-                            <h2
-                              style={{
-                                "padding-bottom": "5%",
-                                "padding-top": "2%"
-                              }}
-                            >
-                              „Ich bestelle viele Pakete und bin fast nie zu
-                              Hause wenn der Paketbote klingelt. PAXET erspart
-                              mir mehrmals pro Monat den 20-minütigen Weg zur
-                              Paketstation oder den Paketshop“
-                            </h2>
-                            <h3
-                              style={{
-                                "padding-bottom": "5%",
-                                "padding-top": "2%",
-                                fontSize: "1.5em"
-                              }}
-                            >
-                              Franziska B. (über Instagram)
-                            </h3>
-                          </td>
+                          <MDBAnimation
+                            reveal
+                            delay="0.25s"
+                            duration="2s"
+                            type="fadeIn"
+                          >
+                            <td style={{ height: "27ch" }}>
+                              <h2
+                                style={{
+                                  "padding-bottom": "5%",
+                                  "padding-top": "2%"
+                                }}
+                              >
+                                „Ich bestelle viele Pakete und bin fast nie zu
+                                Hause wenn der Paketbote klingelt. PAXET erspart
+                                mir mehrmals pro Monat den 20-minütigen Weg zur
+                                Paketstation oder den Paketshop“
+                              </h2>
+                              <h3
+                                style={{
+                                  "padding-bottom": "5%",
+                                  "padding-top": "2%",
+                                  fontSize: "1.5em"
+                                }}
+                              >
+                                Franziska B. (über Instagram)
+                              </h3>
+                            </td>
+                          </MDBAnimation>
                         </tr>
                       </div>
                     </MDBTableBody>
@@ -489,28 +571,35 @@ class Endkunde extends React.Component {
                     <MDBTableBody>
                       <div>
                         <tr>
-                          <td style={{ height: "27ch" }}>
-                            <h2
-                              style={{
-                                "padding-bottom": "5%",
-                                "padding-top": "2%"
-                              }}
-                            >
-                              „Gestern ein Paket von einer freundlichen Person
-                              aus meinem Studentenwohnheim erhalten. Was für ein
-                              Zufall, sie war auch aus Bolivien und wir haben
-                              uns direkt angefreundet“
-                            </h2>
-                            <h3
-                              style={{
-                                "padding-bottom": "5%",
-                                "padding-top": "2%",
-                                fontSize: "1.5em"
-                              }}
-                            >
-                              Eliana S. (über Instagram)
-                            </h3>
-                          </td>
+                          <MDBAnimation
+                            reveal
+                            delay="0.5s"
+                            duration="2s"
+                            type="fadeIn"
+                          >
+                            <td style={{ height: "27ch" }}>
+                              <h2
+                                style={{
+                                  "padding-bottom": "5%",
+                                  "padding-top": "2%"
+                                }}
+                              >
+                                „Gestern ein Paket von einer freundlichen Person
+                                aus meinem Studentenwohnheim erhalten. Was für
+                                ein Zufall, sie war auch aus Bolivien und wir
+                                haben uns direkt angefreundet“
+                              </h2>
+                              <h3
+                                style={{
+                                  "padding-bottom": "5%",
+                                  "padding-top": "2%",
+                                  fontSize: "1.5em"
+                                }}
+                              >
+                                Eliana S. (über Instagram)
+                              </h3>
+                            </td>
+                          </MDBAnimation>
                         </tr>
                       </div>
                     </MDBTableBody>
@@ -549,7 +638,7 @@ class Endkunde extends React.Component {
                   style={{ "border-radius": "24px" }}
                   rounded
                   color="danger"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSe8FCSxk7PVUXsMuc3o3YaaE5IV6zNl3g9AmnfN02DCeOdnnQ/viewform?vc=0&c=0&w=1"
+                  href="/pakethub"
                 >
                   Jetzt Teil werden!
                 </MDBBtn>

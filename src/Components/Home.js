@@ -4,7 +4,7 @@ import CookieConsent from "react-cookie-consent";
 import { Helmet } from "react-helmet";
 import { Container, Row, Col } from "reactstrap";
 import {
-  Animation,
+  MDBAnimation,
   MDBBtn,
   MDBJumbotron,
   MDBContainer,
@@ -27,7 +27,14 @@ import {
   MDBView,
   MDBMask,
   MDBTable,
-  MDBTableBody
+  MDBTableBody,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavbarToggler,
+  MDBCollapse,
+  MDBNavItem,
+  MDBNavLink
 } from "mdbreact";
 import { connect } from "react-redux";
 
@@ -72,17 +79,76 @@ class Home extends React.Component {
     window.scrollTo(0, 0);
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapse: false
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+
   componentDidMount() {
     this.props.dispatch({ type: "NAVHOME" });
+    if (this.state.collapse) {
+      this.setState({
+        collapse: !this.state.collapse
+      });
+    }
+  }
+
+  onClick() {
+    this.setState({
+      collapse: !this.state.collapse
+    });
   }
 
   render() {
     return (
       <div className="Home Background">
+        <div>
+          <MDBNavbar
+            className="header"
+            expand="md"
+            fixed="top"
+            scrolling
+            transparent
+            dark
+          >
+            <MDBNavbarBrand>
+              <a style={{ color: "white" }} href="/#">
+                <strong>PAXET - simplifying delivery</strong>
+              </a>
+            </MDBNavbarBrand>
+            {!this.state.isWideEnough && (
+              <MDBNavbarToggler onClick={this.onClick} />
+            )}
+            <MDBCollapse isOpen={this.state.collapse} navbar>
+              <MDBNavbarNav right>
+                <MDBNavItem active>
+                  <MDBNavLink to="/">Home</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/endkunde">Endkunde</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/pakethub">Pakethubs</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/paketdienstleister">
+                    Paketdienstleister
+                  </MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/team">Team</MDBNavLink>
+                </MDBNavItem>
+              </MDBNavbarNav>
+            </MDBCollapse>
+          </MDBNavbar>
+        </div>
         {/* Hero-Image newes Version*/}
         <LazyHero
           color="#ffffff"
-          minHeight="90vh"
+          minHeight="95vh"
           style={{ background: "#ffffff" }}
         >
           <MDBContainer className="Jumbotron3" fluid no-gutters>
@@ -90,9 +156,9 @@ class Home extends React.Component {
               <MDBCol size="12">
                 <h1
                   style={{
-                    "padding-bottom": "1%",
-                    "padding-top": "1%",
-                    fontSize: "5em"
+                    "padding-bottom": "0.5%",
+                    "padding-top": "0.5%",
+                    fontSize: "4.5em"
                   }}
                 >
                   <b>PAXET</b>
@@ -103,9 +169,9 @@ class Home extends React.Component {
               <MDBCol size="12">
                 <h1
                   style={{
-                    "padding-bottom": "1%",
-                    "padding-top": "1%",
-                    fontSize: "3em",
+                    "padding-bottom": "0.5%",
+                    "padding-top": "0.5%",
+                    fontSize: "2.5em",
                     "padding-left": "1%",
                     "padding-right": "1%"
                   }}
@@ -116,30 +182,38 @@ class Home extends React.Component {
             </MDBRow>
             <MDBRow no-gutters>
               <MDBCol size="12">
-                <h1
+                <h2
                   style={{
-                    "padding-bottom": "1%",
-                    "padding-top": "1%",
+                    "padding-bottom": "0.5%",
+                    "padding-top": "0.5%",
                     "padding-left": "4%",
                     "padding-right": "4%",
-                    fontSize: "2em"
+                    fontSize: "1.65em"
                   }}
                 >
                   Nimm Pakete für deine Nachbarn an und profitiere davon – als
                   PAXET Pakethub.
-                </h1>
+                  <br
+                    style={{
+                      fontSize: "0.5em"
+                    }}
+                  />{" "}
+                  <br
+                    style={{
+                      fontSize: "0.5em"
+                    }}
+                  />
+                  Lass deine Pakete von einem PAXET Pakethub annehmen -
+                  stressfrei und zuverlässig.
+                </h2>
               </MDBCol>
             </MDBRow>
             <MDBRow no-gutters>
               <MDBCol size="12">
-                <h1 style={{ "padding-top": "1%", fontSize: "1em" }}>
+                <h1 style={{ "padding-top": "1%", fontSize: "1.25em" }}>
                   Interesse geweckt?
                 </h1>
-                <MDBBtn
-                  outline
-                  color="danger"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSe8FCSxk7PVUXsMuc3o3YaaE5IV6zNl3g9AmnfN02DCeOdnnQ/viewform?vc=0&c=0&w=1"
-                >
+                <MDBBtn outline color="danger" href="/pakethub">
                   Kontaktier uns!
                 </MDBBtn>
               </MDBCol>
@@ -260,12 +334,13 @@ class Home extends React.Component {
           fluid
           color="black"
           no-gutters
-          style={{ "padding-top": "0px", "padding-bottom": "0px" }}
+          style={{ "padding-top": "0%", "padding-bottom": "0px" }}
         >
           <MDBContainer className="Jumbotron" fluid no-gutters>
             <MDBRow
               className="Sup1"
               style={{
+                "padding-top": "0%",
                 display: "flex"
               }}
             >
@@ -313,7 +388,7 @@ class Home extends React.Component {
                     style={{ "border-radius": "24px" }}
                     rounded
                     color="danger"
-                    href="#"
+                    href="/pakethub"
                   >
                     Mehr erfahren!
                   </MDBBtn>
@@ -339,7 +414,7 @@ class Home extends React.Component {
                     style={{ "border-radius": "24px" }}
                     rounded
                     color="danger"
-                    href="#"
+                    href="/pakethub"
                   >
                     Mehr erfahren!
                   </MDBBtn>
@@ -365,7 +440,7 @@ class Home extends React.Component {
                     style={{ "border-radius": "24px" }}
                     rounded
                     color="danger"
-                    href="#"
+                    href="/pakethub"
                   >
                     Mehr erfahren!
                   </MDBBtn>
@@ -375,225 +450,229 @@ class Home extends React.Component {
             </div>
 
             <MDBContainer className="Jumbotron" fluid no-gutters>
-              <MDBRow
-                className="Sup1"
-                style={{
-                  "padding-top": "2%",
-                  display: "flex"
-                }}
-              >
-                <MDBCol
-                  size="12"
-                  style={{
-                    "padding-top": "7.5%",
-                    "padding-left": "2.5%",
-                    "padding-right": "2.5%"
-                  }}
-                >
-                  <h1>So einfach funktioniert PAXET</h1>
-                </MDBCol>
-              </MDBRow>
-              <div
-                style={{
-                  "padding-bottom": "0px",
-                  fontSize: "1em"
-                }}
-              >
+              <MDBAnimation reveal delay="1s" duration="1s" type="fadeInUp">
                 <MDBRow
+                  className="Sup1"
                   style={{
-                    "padding-left": "10%",
-                    "padding-top": "2.5%",
-                    "padding-right": "10%",
-                    height: "5%"
+                    "padding-top": "2%",
+                    display: "flex"
                   }}
                 >
                   <MDBCol
-                    size="lg"
-                    md="12"
-                    sm="12"
-                    className="align-self-top"
-                    style={{ fontSize: "0.5em", "padding-top": "2.5%" }}
+                    size="12"
+                    style={{
+                      "padding-top": "7.5%",
+                      "padding-left": "2.5%",
+                      "padding-right": "2.5%"
+                    }}
                   >
-                    <MDBTable borderless responsive>
-                      <MDBTableBody>
-                        <div>
-                          <tr>
-                            <td className="align-top">
-                              <img src={S1} className="img-fluid" alt="" />
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style={{ height: "27ch" }}>
-                              <h2
-                                style={{
-                                  "padding-bottom": "5%",
-                                  "padding-top": "2%"
-                                }}
-                              >
-                                Registriere dich als Pakethub bei PAXET
-                              </h2>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <h3
-                                style={{
-                                  "padding-bottom": "5%",
-                                  "padding-top": "2%",
-                                  color: "#7a1429",
-                                  size: "0.5em"
-                                }}
-                              >
-                                Die Registrierung geht schnell und einfach über
-                                unser Formular
-                              </h3>
-                            </td>
-                          </tr>
-                        </div>
-                      </MDBTableBody>
-                    </MDBTable>
-                  </MDBCol>
-                  <MDBCol
-                    size="lg"
-                    md="12"
-                    sm="12"
-                    className="align-self-top"
-                    style={{ fontSize: "0.5em", "padding-top": "2.5%" }}
-                  >
-                    <MDBTable borderless responsive>
-                      <MDBTableBody>
-                        <div>
-                          <tr>
-                            <td className="align-top">
-                              <img src={S2} className="img-fluid" alt="" />
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style={{ height: "27ch" }}>
-                              <h2
-                                style={{
-                                  "padding-bottom": "5%",
-                                  "padding-top": "2%"
-                                }}
-                              >
-                                Werde als PAXET Pakethub sichtbar
-                              </h2>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <h3
-                                style={{
-                                  "padding-bottom": "5%",
-                                  "padding-top": "2%",
-                                  color: "#7a1429",
-                                  size: "0.5em"
-                                }}
-                              >
-                                Nur wenn du sowieso anwesend bist und Lust hast,
-                                Pakete anzunehmen
-                              </h3>
-                            </td>
-                          </tr>
-                        </div>
-                      </MDBTableBody>
-                    </MDBTable>
-                  </MDBCol>
-                  <MDBCol
-                    size="lg"
-                    md="12"
-                    sm="12"
-                    className="align-self-top"
-                    style={{ fontSize: "0.5em", "padding-top": "2.5%" }}
-                  >
-                    <MDBTable borderless responsive>
-                      <MDBTableBody>
-                        <div>
-                          <tr>
-                            <td className="align-top">
-                              <img src={S3} className="img-fluid" alt="" />
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style={{ height: "27ch" }}>
-                              <h2
-                                style={{
-                                  "padding-bottom": "5%",
-                                  "padding-top": "2%"
-                                }}
-                              >
-                                Nehm Pakete für deine Nachbarn und Umgebung
-                                entgegen
-                              </h2>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <h3
-                                style={{
-                                  "padding-bottom": "5%",
-                                  "padding-top": "2%",
-                                  color: "#7a1429",
-                                  size: "0.5em"
-                                }}
-                              >
-                                Deine Nachbarn und die Paketboten werden Dir
-                                danken
-                              </h3>
-                            </td>
-                          </tr>
-                        </div>
-                      </MDBTableBody>
-                    </MDBTable>
-                  </MDBCol>
-                  <MDBCol
-                    size="lg"
-                    md="12"
-                    sm="12"
-                    className="align-self-top"
-                    style={{ fontSize: "0.5em", "padding-top": "2.5%" }}
-                  >
-                    <MDBTable borderless responsive>
-                      <MDBTableBody>
-                        <div>
-                          <tr>
-                            <td className="align-top">
-                              <img src={S4} className="img-fluid" alt="" />
-                            </td>
-                          </tr>
-                          <tr>
-                            <td style={{ height: "27ch" }}>
-                              <h2
-                                style={{
-                                  "padding-bottom": "5%",
-                                  "padding-top": "2%"
-                                }}
-                              >
-                                Übergib das Paket an den Empfänger des Pakets
-                              </h2>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <h3
-                                style={{
-                                  "padding-bottom": "5%",
-                                  "padding-top": "2%",
-                                  color: "#7a1429",
-                                  size: "0.5em"
-                                }}
-                              >
-                                Du kannst stolz sein, zur Problemlösung der
-                                letzten Meile beigetragen zu haben
-                              </h3>
-                            </td>
-                          </tr>
-                        </div>
-                      </MDBTableBody>
-                    </MDBTable>
+                    <h1>So einfach funktioniert PAXET</h1>
                   </MDBCol>
                 </MDBRow>
-              </div>
+                <div
+                  style={{
+                    "padding-bottom": "0px",
+                    fontSize: "1em"
+                  }}
+                >
+                  <MDBRow
+                    style={{
+                      "padding-left": "10%",
+                      "padding-top": "2.5%",
+                      "padding-right": "10%",
+                      height: "5%"
+                    }}
+                  >
+                    <MDBCol
+                      size="lg"
+                      md="12"
+                      sm="12"
+                      className="align-self-top"
+                      style={{ fontSize: "0.5em", "padding-top": "2.5%" }}
+                    >
+                      <MDBTable borderless responsive>
+                        <MDBTableBody>
+                          <div>
+                            <tr>
+                              <td className="align-top">
+                                <img src={S1} className="img-fluid" alt="" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style={{ height: "25ch" }}>
+                                <h2
+                                  style={{
+                                    "padding-bottom": "5%",
+                                    "padding-top": "2%"
+                                  }}
+                                >
+                                  Registriere dich unverbindlich als Pakethub
+                                  bei PAXET
+                                </h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <h3
+                                  style={{
+                                    "padding-bottom": "5%",
+                                    "padding-top": "2%",
+                                    color: "#7a1429",
+                                    size: "0.5em"
+                                  }}
+                                >
+                                  Die Registrierung geht schnell und einfach
+                                  über unser Formular
+                                </h3>
+                              </td>
+                            </tr>
+                          </div>
+                        </MDBTableBody>
+                      </MDBTable>
+                    </MDBCol>
+                    <MDBCol
+                      size="lg"
+                      md="12"
+                      sm="12"
+                      className="align-self-top"
+                      style={{ fontSize: "0.5em", "padding-top": "2.5%" }}
+                    >
+                      <MDBTable borderless responsive>
+                        <MDBTableBody>
+                          <div>
+                            <tr>
+                              <td className="align-top">
+                                <img src={S2} className="img-fluid" alt="" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style={{ height: "25ch" }}>
+                                <h2
+                                  style={{
+                                    "padding-bottom": "5%",
+                                    "padding-top": "2%"
+                                  }}
+                                >
+                                  Werde als PAXET Pakethub sichtbar, wann du
+                                  willst
+                                </h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <h3
+                                  style={{
+                                    "padding-bottom": "5%",
+                                    "padding-top": "2%",
+                                    color: "#7a1429",
+                                    size: "0.5em"
+                                  }}
+                                >
+                                  Nur wenn du sowieso anwesend bist und Lust
+                                  hast, Pakete anzunehmen
+                                </h3>
+                              </td>
+                            </tr>
+                          </div>
+                        </MDBTableBody>
+                      </MDBTable>
+                    </MDBCol>
+                    <MDBCol
+                      size="lg"
+                      md="12"
+                      sm="12"
+                      className="align-self-top"
+                      style={{ fontSize: "0.5em", "padding-top": "2.5%" }}
+                    >
+                      <MDBTable borderless responsive>
+                        <MDBTableBody>
+                          <div>
+                            <tr>
+                              <td className="align-top">
+                                <img src={S3} className="img-fluid" alt="" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style={{ height: "25ch" }}>
+                                <h2
+                                  style={{
+                                    "padding-bottom": "5%",
+                                    "padding-top": "2%"
+                                  }}
+                                >
+                                  Nehm Pakete für deine Nachbarn und Umgebung
+                                  entgegen
+                                </h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <h3
+                                  style={{
+                                    "padding-bottom": "5%",
+                                    "padding-top": "2%",
+                                    color: "#7a1429",
+                                    size: "0.5em"
+                                  }}
+                                >
+                                  Deine Nachbarn und die Paketboten werden Dir
+                                  danken
+                                </h3>
+                              </td>
+                            </tr>
+                          </div>
+                        </MDBTableBody>
+                      </MDBTable>
+                    </MDBCol>
+                    <MDBCol
+                      size="lg"
+                      md="12"
+                      sm="12"
+                      className="align-self-top"
+                      style={{ fontSize: "0.5em", "padding-top": "2.5%" }}
+                    >
+                      <MDBTable borderless responsive>
+                        <MDBTableBody>
+                          <div>
+                            <tr>
+                              <td className="align-top">
+                                <img src={S4} className="img-fluid" alt="" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style={{ height: "25ch" }}>
+                                <h2
+                                  style={{
+                                    "padding-bottom": "5%",
+                                    "padding-top": "2%"
+                                  }}
+                                >
+                                  Übergib das Paket an den Empfänger des Pakets
+                                </h2>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <h3
+                                  style={{
+                                    "padding-bottom": "5%",
+                                    "padding-top": "2%",
+                                    color: "#7a1429",
+                                    size: "0.5em"
+                                  }}
+                                >
+                                  Du kannst stolz sein, zur Problemlösung der
+                                  letzten Meile beigetragen zu haben
+                                </h3>
+                              </td>
+                            </tr>
+                          </div>
+                        </MDBTableBody>
+                      </MDBTable>
+                    </MDBCol>
+                  </MDBRow>
+                </div>
+              </MDBAnimation>
             </MDBContainer>
 
             <MDBRow
@@ -834,7 +913,7 @@ class Home extends React.Component {
                   style={{ "border-radius": "24px" }}
                   rounded
                   color="danger"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSe8FCSxk7PVUXsMuc3o3YaaE5IV6zNl3g9AmnfN02DCeOdnnQ/viewform?vc=0&c=0&w=1"
+                  href="/pakethub"
                 >
                   Jetzt Teil werden!
                 </MDBBtn>
